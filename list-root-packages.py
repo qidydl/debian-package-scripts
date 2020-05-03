@@ -1,4 +1,18 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
+
+"""List Debian packages which nothing else depends on
+
+This script can be used to see which packages are "roots" in the conceptual tree where "depends on" relationships flow
+from roots to leaves. In general these are likely to be the actual applications that are used and installed by choice,
+and they should probably be flagged as manually-installed (see list-manual-packages.py).
+
+This script outputs one package name per line, with the package architecture as a suffix separated by a colon."""
+
+__author__ = "David Osolkowski"
+__copyright__ = "Copyright 2020 David Osolkowski"
+__license__ = "MIT"
+__status__ = "Development"
+__version__ = "1.1.0"
 
 from apt import cache
 
